@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Document</title>
+</head>
+<body>
+
+<section class="wrapper">
+
+  <video muted poster="images/vid1_large.png">
+    <!-- need multiple sources for cross browser compatibility -->
+    <!-- for older ios devices, MP4 has to be the first source -->
+    <source src="video/mini_1.ogg" type="video/mp4">
+      <source src="video/mini_1.ogg" type="video/ogg">
+        <source src="video/mini_1.webm" type="video/webm">
+your browser doesnt support video. Use one that doesnt suck!
+  </video>
+
+  <button>pause</button>
+  <button>play</button>
+  <button>rewind</button>
+
+</section>
+
+<script src="js/main.js"></script>
+</body>
+
+</html>

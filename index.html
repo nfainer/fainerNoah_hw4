@@ -9,9 +9,24 @@
 </head>
 <body>
 
- <iframe width="640" height="360" src="https://www.youtube.com/embed/uj2dmQruJXs?list=FLBWsSvqbIxnz6l210DokDkQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<section class="wrapper">
 
- <iframe width="640" height="360" src="https://www.youtube.com/embed/C0iJdiBGPxo?list=FLBWsSvqbIxnz6l210DokDkQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
- 
+  <video muted poster="images/vid1_large.png">
+    <!-- need multiple sources for cross browser compatibility -->
+    <!-- for older ios devices, MP4 has to be the first source -->
+    <source src="video/mini_1.ogg" type="video/mp4">
+      <source src="video/mini_1.ogg" type="video/ogg">
+        <source src="video/mini_1.webm" type="video/webm">
+your browser doesnt support video. Use one that doesnt suck!
+  </video>
+
+  <button>pause</button>
+  <button>play</button>
+  <button>rewind</button>
+
+</section>
+
+<script src="js/main.js"></script>
 </body>
+
 </html>

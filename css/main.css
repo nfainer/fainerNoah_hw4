@@ -5,3 +5,23 @@ body {
   color: white;
   font-size: 16px;
 }
+
+.wrapper
+{
+  width: 90%;
+  margin: 0 auto;
+}
+
+video
+{
+  width: 100%;
+}
+
+button
+{
+  padding: 5px 8px;
+  font-size: 1.5em;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 12px;
+}

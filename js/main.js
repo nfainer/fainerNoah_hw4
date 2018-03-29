@@ -10,8 +10,9 @@ String.prototype.capIt = function() {
 let sigils = document.querySelectorAll('.sigilContainer'),
 lightbox = document.querySelector('.lightbox'),
 closeLightBoxButton = document.querySelector('.close-lightbox');
-vidPlayer =document.querySelector('video');
+vidPlayer = document.querySelector('video');
 vidControls = document.querySelector('.controls');
+imageBanner = document.querySelector('#houseImages')
 
 
 
@@ -26,6 +27,16 @@ function showHouseVideo(){
   vidPlayer.src = `video/House-${houseName}.${vidPlayer.currentSrc.split('.')[1]}`;
   vidPlayer.load();
   vidPlayer.play();
+
+  scrollBanners(this.dataset.offset);
+}
+
+function scrollBanners(offset) {
+  //move the banner images to the left
+  let moveIt  = offset * 600 + "px";
+
+  imageBanner.style.right = moveIt;
+
 }
 
 function closeLightBox(){

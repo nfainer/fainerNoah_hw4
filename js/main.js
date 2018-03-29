@@ -1,42 +1,68 @@
+// JavaScript Document
 (() => {
-  console.log('linked up');
-  //variables first
-  // grab the video
-  const vidPlayer = document.querySelector('video'),
-  pauseButton = document.querySelectorAll('button')[0],
-  playButton = document.querySelectorAll('button')[1],
-  rewindButton = document.querySelectorAll('button')[2];
+console.log("linked up");
 
-  //funcitons go in the middle
+String.prototype.capIt = function() {
+  return this.replace(this.charAt(), this.charAt().toUpperCase());
+}
 
-  function volOn() {
-    vidPlayer.muted = false;
-  }
+//variable stack goes here
+let sigils = document.querySelectorAll('.sigilContainer'),
+lightbox = document.querySelector('.lightbox'),
+closeLightBoxButton = document.querySelector('.close-lightbox');
+vidPlayer =document.querySelector('video');
+vidControls = document.querySelector('.controls');
 
-  function volOff() {
-    vidPlayer.muted = true;
-  }
 
-  function playVideo() {
-    //make player play
+
+//functions in the middle
+function showHouseVideo(){
+  //debugger;
+  let houseName = this.className.split(' ')[1].capIt()
+  //split apart the class name on the element, grab the house from the result
+  document.querySelector('h1').textContent = `House ${houseName}`;
+  lightbox.classList.add('show-lightbox');
+  //make the video play
+  vidPlayer.src = `video/House-${houseName}.${vidPlayer.currentSrc.split('.')[1]}`;
+  vidPlayer.load();
+  vidPlayer.play();
+}
+
+function closeLightBox(){
+  lightbox.classList.remove('show-lightbox')
+  //stop video and rewind it to 0
+  vidPlayer.pause();
+  vidPlayer.currentTime = 0;
+
+
+  vidPlayer.pause();
+  vidPlayer.currentTime = 0;
+
+}
+
+function pausePlay(){
+  // flip the icon to "play"
+  let theButton = this.firstElementChild;
+
+  if (vidPlayer.paused == true){
     vidPlayer.play();
-  }
+    theButton.dataset.icon = "pause";
 
-  function pauseVideo() {
-    //make player play
+  } else {
     vidPlayer.pause();
+    theButton.dataset.icon = "play";
   }
 
-  function rewindVideo() {
-    //make player play
-    vidPlayer.currentTime -= 5;
-  }
+}
 
-  vidPlayer.addEventListener('mouseover', volOn);
-  vidPlayer.addEventListener('mouseout', volOff);
 
-  playButton.addEventListener('click', playVideo);
-  pauseButton.addEventListener('click', pauseVideo);
-  rewindButton.addEventListener('click', rewindVideo);
+
+
+// event handelling at the bottomNav
+sigils.forEach(sigil => sigil.addEventListener('click', showHouseVideo));
+closeLightBoxButton.addEventListener('click', closeLightBox);
+vidPlayer.addEventListener('ended', closeLightBox)
+vidControls.addEventListener('click', pausePlay)
+
 
 })();

@@ -12,7 +12,9 @@ lightbox = document.querySelector('.lightbox'),
 closeLightBoxButton = document.querySelector('.close-lightbox');
 vidPlayer = document.querySelector('video');
 vidControls = document.querySelector('.controls');
+faPause = document.querySelector('.fa-pause')
 imageBanner = document.querySelector('#houseImages')
+volumeControl = document.querySelector('vol-control');
 
 
 
@@ -66,14 +68,17 @@ function pausePlay(){
 
 }
 
-
+setVolume = function() {
+  video.volume = this.value / 100;
+};
 
 
 // event handelling at the bottomNav
 sigils.forEach(sigil => sigil.addEventListener('click', showHouseVideo));
 closeLightBoxButton.addEventListener('click', closeLightBox);
-vidPlayer.addEventListener('ended', closeLightBox)
-vidControls.addEventListener('click', pausePlay)
-
+vidPlayer.addEventListener('ended', closeLightBox);
+faPause.addEventListener('click', pausePlay);
+volumeControl.addEventListener('change', setVolumne);
+volumeControl.addEventListener('input', setVolumne);
 
 })();

@@ -8,6 +8,7 @@
 <!-- font awesome links -->
 <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/solid.js" integrity="sha384-P4tSluxIpPk9wNy8WSD8wJDvA8YZIkC6AQ+BfAFLXcUZIPQGu4Ifv4Kqq+i2XzrM" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/fontawesome.js" integrity="sha384-2IUdwouOFWauLdwTuAyHeMMRFfeyy4vqYNjodih+28v2ReC+8j+sLF9cK339k5hY" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -15,12 +16,14 @@
 
     <section id="imageContainer">
     	<div id="houseImages"> <!-- add in all of the images to make a scrolling "banner" -->
-    		<img src="images/stark.jpg"/>
-    		<img src="images/baratheon.jpg"/>
-    		<img src="images/lannister.jpg"/>
-    		<img src="images/tully.jpg"/>
-    		<img src="images/greyjoy.jpg"/>
-    		<img src="images/arryn.jpg"/>
+    		<img src="images/stark.jpg" alt="img"/>
+    		<img src="images/baratheon.jpg" alt="img"/>
+    		<img src="images/lannister.jpg" alt="img"/>
+    		<img src="images/tully.jpg" alt="img"/>
+    		<img src="images/greyjoy.jpg" alt="img"/>
+    		<img src="images/arryn.jpg" alt="img"/>
+        <img src="images/targaryen.jpg" alt="img">
+        <img src="images/tyrell.jpg" alt="img">
         </div>
     </section>
 
@@ -33,6 +36,8 @@
             <li><div class="sigilContainer tully" data-offset="3"></div></li>
             <li><div class="sigilContainer greyjoy" data-offset="4"></div></li>
             <li><div class="sigilContainer arryn" data-offset="5"></div></li>
+            <li><div class="sigilContainer targaryen" data-offset="6"></div></li>
+            <li><div class="sigilContainer tyrell" data-offset="7"></div></li>
         </ul>
     </nav>
 
@@ -44,11 +49,14 @@
 <section class="lightbox">
     <span class="close-lightbox">x</span>
     <!-- add video here with sources for fallback / standards -->
-    <video controls>
+    <video>
     <source src="video/House-Stark.mp4" type="video/mp4">
     </video>
+
     <div class="controls">
       <i class="fas fa-pause"></i>
+      <i class="far fa-angle-double-right"></i>
+      <input id="vol-control" type="range" min="0" max="100" step="1"></input>
     </div>
 </section>
 <script src="js/main.js"></script>

@@ -41,7 +41,7 @@
         </ul>
     </nav>
 
-    <h1 class="tag">clever tagline goes here</h1><!-- replace this with the house name -->
+    <h1 class="tag"></h1><!-- replace this with the house name -->
 
     <p class="house-info"></p><!-- replace this with house details (github gist for details) -->
 </main>
@@ -53,11 +53,18 @@
     <source src="video/House-Stark.mp4" type="video/mp4">
     </video>
 
+<div class="buttons">
     <div class="controls">
       <i class="fas fa-pause"></i>
-      <i class="far fa-angle-double-right"></i>
-      <input id="vol-control" type="range" min="0" max="100" step="1"></input>
     </div>
+
+    <input class="seekslider" type="range" min="0" max="100" value="0" step="1">
+    <p id="timer"><span class="curTimeText"></span> / <span class="durTimeText"></span></p>
+    <button class="rwd"><<</button>
+    <button class="mutebtn">Mute</button>
+    <button class="fwd">>></button>
+</div>
+
 </section>
 <script src="js/main.js"></script>
 </body>

@@ -38,7 +38,7 @@ main {
 	overflow:hidden;
 }
 
-#houseImages { position:relative; width:4000px; transition: all .5s; }
+#houseImages { position:relative; width:5200px; transition: all .5s; }
 #houseImages img { float:left; }
 
 #bottomNav { margin-top:30px; }
@@ -114,6 +114,8 @@ main {
 	height: 100%;
 	text-align: center;
 	background-color: rgba(0,0,0,0.95);
+  animation-name: lightbox;
+  animation-duration: 2s;
 }
 
 .close-lightbox {
@@ -137,7 +139,7 @@ video {
 	border: thin solid #949393;
 }
 
-.controls
+.buttons
 {
   padding: 2em 0;
   border: thin dashed white;
@@ -148,4 +150,23 @@ video {
   font-size: 2em;
   color: white;
   cursor: pointer;
+}
+
+#timer
+{
+  color: #fff;
+}
+
+.house-info
+{
+  color: #fff;
+  line-height: 20px;
+  padding: 15px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+@keyframes lightbox {
+  from{opacity: 0;}
+  to{opacity: 1;}
 }

@@ -38,7 +38,7 @@ main {
 	overflow:hidden;
 }
 
-#houseImages { position:relative; width:5200px; transition: all .5s; }
+#houseImages { position:relative; width:6200px; transition: all .5s; }
 #houseImages img { float:left; }
 
 #bottomNav { margin-top:30px; }
@@ -83,11 +83,14 @@ main {
 .arryn { background-position:-253px -54px; }
 .arryn:hover { background-position:-253px 0px; }
 
-.targaryen { background-position:-303px -54px; }
-.targaryen:hover { background-position:-303px 0px; }
+.targaryen { background-position:-302px -54px; }
+.targaryen:hover { background-position:-302px 0px; }
 
-.tyrell { background-position:-352px -54px; }
-.tyrell:hover { background-position:-352px 0px; }
+.tyrell { background-position:-350px -54px; }
+.tyrell:hover { background-position:-350px 0px; }
+
+.frey { background-position:-401px -54px; }
+.frey:hover { background-position:-401px 0px; }
 /* ----- end image sprite ----- */
 
 /* ----- classes for transitions ----- */
@@ -164,6 +167,11 @@ video {
   padding: 15px;
   width: 600px;
   margin: 0 auto;
+}
+
+.seekslider
+{
+  width: 400px;
 }
 
 @keyframes lightbox {

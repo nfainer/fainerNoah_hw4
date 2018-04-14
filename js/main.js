@@ -19,6 +19,7 @@ durTimeText = document.querySelector('.durTimeText')
 mutebtn = document.querySelector('.mutebtn');
 rwd = document.querySelector('.rwd');
 fwd = document.querySelector('.fwd');
+vol = document.querySelector('.volume');
 
 
 //functions in the middle
@@ -43,6 +44,7 @@ function showHouseVideo(){
   if(houseName == "Arryn"){document.querySelector('.house-info').textContent = 'House Arryn of the Eyrie is one of the Great Houses of Westeros. It has ruled over the Vale of Arryn for millennia, originally as the Kings of Mountain and Vale and more recently as Lords Paramount of the Vale and Wardens of the East under the Targaryen kings and Baratheon-Lannister kings. The nominal head of House Arryn is Robin Arryn, the Lord of the Eyrie, with his stepfather Petyr Baelish acting as Lord Protector until he reaches the age of majority.'}
   if(houseName == "Targaryen"){document.querySelector('.house-info').textContent = 'House Targaryen of Dragonstone is a Great House of Westeros and was the ruling royal House of the Seven Kingdoms for three centuries since it conquered and unified the realm, before it was deposed during Roberts Rebellion and House Baratheon replaced it as the new royal House. The few surviving Targaryens fled into exile to the Free Cities of Essos across the Narrow Sea. Currently based on Dragonstone off of the eastern coast of Westeros, House Targaryen seeks to retake the Seven Kingdoms from House Lannister, who formally replaced House Baratheon as the royal House following the destruction of the Great Sept of Baelor.'}
   if(houseName == "Tyrell"){document.querySelector('.house-info').textContent = 'House Tyrell began as a cadet branch of House Gardener, the ancient Kings of the Reach. The Tyrells became senior servants of the main Gardener line, serving for centuries as castellans of the royal castle at Highgarden. Over time they rose to prominence as one of the strongest noble Houses in the Reach, and even intermarried with the royal line - though so did many other powerful Houses from the Reach.'}
+  if(houseName == "Frey"){document.querySelector('.house-info').textContent = 'House Frey of the Twins was the Great House of the Riverlands, having gained their position for their treachery against their former liege lords, House Tully, who were stripped of all their lands and titles for their rebellion against the Iron Throne; House Tully had supported the independence movement for the Kingdom of the North. The current head of the house is unknown following the assassinations of Lord Walder Frey and two of his sons, Lothar Frey and Walder Rivers, by the vengeful Arya Stark. This is made more complex by the subsequent assassination of all the male Freys soon after.'}
 }
 
 function scrollBanners(offset) {
@@ -118,6 +120,10 @@ function skiprwd(){
   vidPlayer.currentTime -= 10;
 }
 
+function chngVol(){
+  vidPlayer.volume = vol.value / 100;
+}
+
 
 // event handelling at the bottomNav
 sigils.forEach(sigil => sigil.addEventListener('click', showHouseVideo));
@@ -129,6 +135,7 @@ vidPlayer.addEventListener('timeupdate', seektimeupdate);
 mutebtn.addEventListener('click', vidmute);
 fwd.addEventListener('click', skipfwd);
 rwd.addEventListener('click', skiprwd);
+vol.addEventListener('change', chngVol);
 
 
 })();

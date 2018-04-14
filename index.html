@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DOM Traversal</title>
+<title>Game of Thrones DOM traversal</title>
 <link href="css/meyerReset.css" rel="stylesheet" type="text/css" media="screen">
 <link href="css/GOT_master.css" rel="stylesheet" type="text/css" media="screen">
 <!-- font awesome links -->
@@ -24,6 +24,7 @@
     		<img src="images/arryn.jpg" alt="img"/>
         <img src="images/targaryen.jpg" alt="img">
         <img src="images/tyrell.jpg" alt="img">
+        <img src="images/frey.jpg" alt="img">
         </div>
     </section>
 
@@ -38,10 +39,11 @@
             <li><div class="sigilContainer arryn" data-offset="5"></div></li>
             <li><div class="sigilContainer targaryen" data-offset="6"></div></li>
             <li><div class="sigilContainer tyrell" data-offset="7"></div></li>
+            <li><div class="sigilContainer frey" data-offset="8"></div></li>
         </ul>
     </nav>
 
-    <h1 class="tag"></h1><!-- replace this with the house name -->
+    <h1 class="tag">Choose a House Sigil</h1><!-- replace this with the house name -->
 
     <p class="house-info"></p><!-- replace this with house details (github gist for details) -->
 </main>
@@ -57,12 +59,12 @@
     <div class="controls">
       <i class="fas fa-pause"></i>
     </div>
-
-    <input class="seekslider" type="range" min="0" max="100" value="0" step="1">
-    <p id="timer"><span class="curTimeText"></span> / <span class="durTimeText"></span></p>
     <button class="rwd"><<</button>
-    <button class="mutebtn">Mute</button>
+    <input class="seekslider" type="range" min="0" max="100" value="0" step="1">
     <button class="fwd">>></button>
+    <p id="timer"><span class="curTimeText"></span> / <span class="durTimeText"></span></p>
+    <button class="mutebtn">Mute</button>
+    <input class="volume" type="range" min="0" max="100" value="100" step="1">
 </div>
 
 </section>
